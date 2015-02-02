@@ -1,11 +1,11 @@
 plugin_spoiler_default_toggle_text:
-  title: Teks Toggle Default
+  title: Teks <em>Toggle</em> Bawaan
   label:
     open: Buka
     close: Tutup
 
 plugin_spoiler_default_toggle_placement:
-  title: Penempatan Toggle Default
+  title: Penempatan <em>Toggle</em> Bawaan
   label:
     position: Posisi
   value:
@@ -13,7 +13,7 @@ plugin_spoiler_default_toggle_placement:
     bottom: Setelah Panel
 
 plugin_spoiler_default_config:
-  title: Konfigurasi Default
+  title: Konfigurasi Bawaan
   label:
     skin: Tema
     css: <abbr title="Cascading Style Sheet">CSS</abbr> Ekstra

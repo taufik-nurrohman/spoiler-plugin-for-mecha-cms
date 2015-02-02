@@ -7,9 +7,9 @@ Version: 1.0.0
 
 > Sebuah plugin _spoiler_ tingkat lanjut.
 
-Sayangnya, saya tidak berhasil menemukan definisi yang tepat mengenai istilah &ldquo;spoiler&rdquo; dari Internet. Ini aneh, mengingat banyak orang telah menggunakan istilah ini untuk menyatakan panel yang dapat dibuka dan ditutup dengan tombol, yang biasanya ditempatkan di dalam konten posting untuk menyembunyikan sesuatu yang spesial atau terlalu panjang untuk diperlihatkan begitu saja. Apakah Saya melewatkan sesuatu?
+Sayangnya, Saya tidak berhasil menemukan definisi yang tepat mengenai istilah &ldquo;spoiler&rdquo; dari Internet. Ini aneh, mengingat banyak orang telah menggunakan istilah ini untuk menyatakan panel yang dapat dibuka dan ditutup dengan tombol, yang biasanya ditempatkan di dalam konten posting untuk menyembunyikan sesuatu yang spesial atau terlalu panjang untuk diperlihatkan begitu saja. Apakah Saya melewatkan sesuatu?
 
-Plugin ini akan melakukan sesuatu yang sama untuk Anda. Setelah Anda selesai memasang plugin ini (dan jika anda bisa membaca tulisan ini, maka itu artinya plugin telah berhasil terpasang), maka Anda bisa menerapkan _shortcode_ ini di dalam posting Anda:
+Plugin ini akan melakukan sesuatu yang sama untuk Anda. Setelah Anda selesai memasang plugin ini (dan jika Anda bisa membaca tulisan ini, maka itu artinya plugin telah berhasil terpasang), maka Anda bisa menerapkan _shortcode_ ini di dalam posting Anda:
 
 ### Dasar Penggunaan
 
