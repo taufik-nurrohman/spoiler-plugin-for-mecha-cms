@@ -7,7 +7,7 @@ Version: 1.0.0
 
 > An advanced _spoiler_ plugin.
 
-Unfortunately, I was unable to find the exact definition of the term &ldquo;spoiler&rdquo; of the Internet. This is strange, considering that many people use this term to express toggle&ndash;able panel that can be opened and closed by a button, which is usually placed in the post content to hide something special or too long to be shown up. Am I missing something?
+Unfortunately, I was unable to find the exact definition of the term &ldquo;spoiler&rdquo; on the Internet. This is strange, considering that many people use this term to express toggle&ndash;able panel that can be opened and closed by a button, which is usually placed in the post content to hide something special or too long to be shown up. Am I missing something?
 
 This plugin will do the same thing for you. After you have installed this plugin (and if you can see this page, then it means that the plugin has been successfully installed), then you can apply these _shortcodes_ in your post content:
 
