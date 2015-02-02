@@ -5,7 +5,7 @@ Version: 1.0.0
 
 ====
 
-> An advanced spoiler plugin.
+> An advanced _spoiler_ plugin.
 
 Unfortunately, I was unable to find the exact definition of the term &ldquo;spoiler&rdquo; of the Internet. This is strange, considering that many people use this term to express toggle&ndash;able panel that can be opened and closed by a button, which is usually placed in the post content to hide something special or too long to be shown up. Am I missing something?
 
