@@ -1,0 +1,14 @@
+.spoiler-toggle {display:inline-block}
+
+.spoiler-toggle:before {content:"\25bc"}
+.spoiler-state-expanded .spoiler-toggle:before {content:"\25b2"}
+
+.spoiler-content {margin:0 0 1.3846153846153846em}
+.spoiler-toggle + .spoiler-content {margin:1.3846153846153846em 0 0}
+
+.spoiler-state-disabled .spoiler-toggle {
+  cursor:default;
+  cursor:not-allowed;
+}
+
+.spoiler-js .spoiler-state-collapsed .spoiler-content {display:none}

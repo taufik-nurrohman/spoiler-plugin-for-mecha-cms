@@ -1,0 +1,233 @@
+Title: Spoiler
+Author: Taufik Nurrohman
+URL: http://latitudu.com
+Version: 1.0.0
+
+====
+
+> Sebuah plugin _spoiler_ tingkat lanjut.
+
+Sayangnya, saya tidak berhasil menemukan definisi yang tepat mengenai istilah &ldquo;spoiler&rdquo; dari Internet. Ini aneh, mengingat banyak orang telah menggunakan istilah ini untuk menyatakan panel yang dapat dibuka dan ditutup dengan tombol, yang biasanya ditempatkan di dalam konten posting untuk menyembunyikan sesuatu yang spesial atau terlalu panjang untuk diperlihatkan begitu saja. Apakah Saya melewatkan sesuatu?
+
+Plugin ini akan melakukan sesuatu yang sama untuk Anda. Setelah Anda selesai memasang plugin ini (dan jika anda bisa membaca tulisan ini, maka itu artinya plugin telah berhasil terpasang), maka Anda bisa menerapkan _shortcode_ ini di dalam posting Anda:
+
+### Dasar Penggunaan
+
+Sebuah _spoiler_ sederhana dengan pengaturan bawaan.
+
+~~~ .no-highlight
+`{{spoiler}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler}}
+Konten di sini…
+{{/spoiler}}
+
+### Terbuka secara _Default_
+
+Tambahkan atribut `expand` untuk membuat _spoiler_ menjadi terbuka secara _default_.
+
+~~~ .no-highlight
+`{{spoiler expand}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler expand}}
+Konten di sini…
+{{/spoiler}}
+
+### Modifikasi Teks pada Tombol _Toggle_
+
+Tambahkan atribut `toggle-text` untuk mengganti teks bawaan pada tombol dengan teks tombol Anda sendiri.
+
+~~~ .no-highlight
+`{{spoiler toggle-text="Spoiler"}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-text="Spoiler"}}
+Konten di sini…
+{{/spoiler}}
+
+Pisahkan teks tombol menjadi dua bagian dengan sebuah &ldquo; | &rdquo; untuk membuat tombol berubah status secara bergantian ketika panel _spoiler_ terbuka dan tertutup.
+
+~~~ .no-highlight
+`{{spoiler toggle-text="Buka | Tutup"}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler toggle-text="Foo&nbsp;|&nbsp;Bar | Tutup"}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-text="Buka | Tutup"}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler toggle-text="Foo&nbsp;|&nbsp;Bar | Tutup"}}
+Konten di sini…
+{{/spoiler}}
+
+### Modifikasi Penempatan Tombol _Toggle_
+
+Apakah Anda ingin meletakkan tombol _toggle_ sebelum atau setelah panel?
+
+~~~ .no-highlight
+`{{spoiler toggle-placement="top"}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler toggle-placement="bottom"}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-placement="top"}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler toggle-placement="bottom"}}
+Konten di sini…
+{{/spoiler}}
+
+### Bunglon
+
+Kelas pengubah terinspirasi dari [Twitter Bootstrap](http://getbootstrap.com/css#buttons-options "Bootstrap &ndash; CSS &ndash; Buttons Options").
+
+~~~ .no-highlight
+`{{spoiler.default}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler.primary}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler.success}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler.info}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler.warning}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler.danger}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler.default}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler.primary}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler.success}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler.info}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler.warning}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler.danger}}
+Konten di sini…
+{{/spoiler}}
+
+### Spesies Baru
+
+Sebenarnya Anda bisa dengan bebas menyisipkan kelas pengubah setelah frase `spoiler`.
+
+~~~ .no-highlight
+`{{spoiler.foo}}` … `{{/spoiler}}`
+`{{spoiler.foo-bar-baz}}` … `{{/spoiler}}`
+~~~
+
+~~~ .css
+.spoiler-foo {background-color:#AAA}
+.spoiler-foo-bar-baz {background-color:#BBB}
+~~~
+
+### Kelas dan ID Kustom
+
+Atau Anda bisa menyisipkan kelas-kelas dan ID pengubah yang tidak terikat kepada prefiks `.spoiler-` dan `#spoiler:` pada atribut `class` dan `id`.
+
+~~~ .no-highlight
+`{{spoiler class="custom-1" id="custom-1"}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+~~~ .css
+.spoiler.custom-1 {color:#CCC}
+#custom-1 {font-weight:bold}
+~~~
+
+### Atribut Kustom
+
+Atribut-atribut yang lain akan diperlakukan sebagai atribut HTML biasa.
+
+~~~ .no-highlight
+`{{spoiler style="color:red;" title="Klik untuk membuka dan menutup!"}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+### Akordion
+
+Tambahkan atribut `connect` untuk mengaitkan antara panel yang satu dengan panel yang lainnya yang juga memiliki atribut `connect` dengan nilai yang sama.
+
+~~~ .no-highlight
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+
+`{{spoiler.danger connect="B" expand}}` … `{{/spoiler}}`
+`{{spoiler.danger connect="B"}}` … `{{/spoiler}}`
+`{{spoiler.danger connect="B"}}` … `{{/spoiler}}`
+~~~
+
+{{spoiler.success connect="A"}} … {{/spoiler}}
+{{spoiler.success connect="A"}} … {{/spoiler}}
+{{spoiler.success connect="A"}} … {{/spoiler}}
+
+{{spoiler.danger connect="B" expand}} … {{/spoiler}}
+{{spoiler.danger connect="B"}} … {{/spoiler}}
+{{spoiler.danger connect="B"}} … {{/spoiler}}
+
+### Nonaktif
+
+Apakah Anda ingin menonaktifkan _spoiler_ Anda?
+
+~~~ .no-highlight
+`{{spoiler lock}}`
+Konten di sini…
+`{{/spoiler}}`
+
+`{{spoiler expand lock}}`
+Konten di sini…
+`{{/spoiler}}`
+~~~
+
+{{spoiler lock}}
+Konten di sini…
+{{/spoiler}}
+
+{{spoiler expand lock}}
+Konten di sini…
+{{/spoiler}}

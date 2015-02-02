@@ -1,0 +1,44 @@
+.spoiler-toggle,
+.spoiler-toggle:focus,
+.spoiler-toggle:hover,
+.spoiler-toggle:active {
+  display:inline-block;
+  margin:0;
+  padding:0 .46153846153846156em;
+  height:1.6923076923076923em;
+  background-color:darkslategray;
+  border:.15384615384615385em solid;
+  border-color:rgba(255,255,255,.4) rgba(0,0,0,.2) rgba(0,0,0,.4) rgba(255,255,255,.2);
+  box-shadow:0 1px 1px rgba(0,0,0,.2);
+  font:normal bold 100%/1.6923076923076923em Helmet,FreeSans,Sans-Serif;
+  color:white;
+  text-decoration:none;
+  outline:none;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  cursor:pointer;
+}
+
+.spoiler-toggle:active {
+  border-color:rgba(0,0,0,.4) rgba(255,255,255,.2) rgba(255,255,255,.4) rgba(0,0,0,.2);
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.2);
+}
+
+.spoiler-content {margin:0 0 1.3846153846153846em}
+.spoiler-toggle + .spoiler-content {margin:1.3846153846153846em 0 0}
+
+.spoiler-state-disabled .spoiler-toggle {
+  cursor:default;
+  cursor:not-allowed;
+  border-color:rgba(255,255,255,.4) rgba(0,0,0,.2) rgba(0,0,0,.4) rgba(255,255,255,.2);
+  box-shadow:0 1px 1px rgba(0,0,0,.2);
+}
+
+.spoiler-js .spoiler-state-collapsed .spoiler-content {display:none}
+
+.spoiler-primary .spoiler-toggle {background-color:steelblue}
+.spoiler-success .spoiler-toggle {background-color:mediumseagreen}
+.spoiler-info .spoiler-toggle {background-color:skyblue}
+.spoiler-warning .spoiler-toggle {background-color:sandybrown}
+.spoiler-danger .spoiler-toggle {background-color:salmon}

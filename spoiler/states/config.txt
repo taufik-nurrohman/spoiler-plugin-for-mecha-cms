@@ -1,0 +1,1 @@
+a:5:{s:16:"toggle_text_open";s:4:"Open";s:17:"toggle_text_close";s:5:"Close";s:16:"toggle_placement";s:6:"bottom";s:4:"skin";s:5:"panel";s:3:"css";s:0:"";}

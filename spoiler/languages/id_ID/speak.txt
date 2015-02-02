@@ -1,0 +1,21 @@
+plugin_spoiler_default_toggle_text:
+  title: Teks Toggle Default
+  label:
+    open: Buka
+    close: Tutup
+
+plugin_spoiler_default_toggle_placement:
+  title: Penempatan Toggle Default
+  label:
+    position: Posisi
+  value:
+    top: Sebelum Panel
+    bottom: Setelah Panel
+
+plugin_spoiler_default_config:
+  title: Konfigurasi Default
+  label:
+    skin: Tema
+    css: <abbr title="Cascading Style Sheet">CSS</abbr> Ekstra
+
+# PS: I don't know the translation for the word "default" and "toggle" in Indonesian -_-

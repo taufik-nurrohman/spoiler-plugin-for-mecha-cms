@@ -1,0 +1,19 @@
+plugin_spoiler_default_toggle_text:
+  title: Default Toggle Text
+  label:
+    open: Open
+    close: Close
+
+plugin_spoiler_default_toggle_placement:
+  title: Default Toggle Placement
+  label:
+    position: Position
+  value:
+    top: Before Panel
+    bottom: After Panel
+
+plugin_spoiler_default_config:
+  title: Default Configurations
+  label:
+    skin: Theme
+    css: Extra <abbr title="Cascading Style Sheet">CSS</abbr>

@@ -1,0 +1,233 @@
+Title: Spoiler
+Author: Taufik Nurrohman
+URL: http://latitudu.com
+Version: 1.0.0
+
+====
+
+> An advanced spoiler plugin.
+
+Unfortunately, I was unable to find the exact definition of the term &ldquo;spoiler&rdquo; of the Internet. This is strange, considering that many people use this term to express toggle&ndash;able panel that can be opened and closed by a button, which is usually placed in the post content to hide something special or too long to be shown up. Am I missing something?
+
+This plugin will do the same thing for you. After you have installed this plugin (and if you can see this page, then it means that the plugin has been successfully installed), then you can apply these _shortcodes_ in your post content:
+
+### Basic Usage
+
+A simple _spoiler_ with default settings.
+
+~~~ .no-highlight
+`{{spoiler}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler}}
+Content goes here…
+{{/spoiler}}
+
+### Default Expanded
+
+Add a `expand` attribute to make the _spoiler_ expanded by default.
+
+~~~ .no-highlight
+`{{spoiler expand}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler expand}}
+Content goes here…
+{{/spoiler}}
+
+### Custom Toggle Text
+
+Add a `toggle-text` attribute to replace the default toggle text with your own toggle text.
+
+~~~ .no-highlight
+`{{spoiler toggle-text="Spoiler"}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-text="Spoiler"}}
+Content goes here…
+{{/spoiler}}
+
+Split the toggle text with a &ldquo; | &rdquo; to toggle the text between the opening and closing state of _spoiler_.
+
+~~~ .no-highlight
+`{{spoiler toggle-text="Open | Close"}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler toggle-text="Foo&nbsp;|&nbsp;Bar | Close"}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-text="Open | Close"}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler toggle-text="Foo&nbsp;|&nbsp;Bar | Close"}}
+Content goes here…
+{{/spoiler}}
+
+### Custom Toggle Placement
+
+Do you want to put the toggle button before or after the panel?
+
+~~~ .no-highlight
+`{{spoiler toggle-placement="top"}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler toggle-placement="bottom"}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler toggle-placement="top"}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler toggle-placement="bottom"}}
+Content goes here…
+{{/spoiler}}
+
+### Chameleon
+
+Modifier classes are inspired by [Twitter Bootstrap](http://getbootstrap.com/css#buttons-options "Bootstrap &ndash; CSS &ndash; Buttons Options").
+
+~~~ .no-highlight
+`{{spoiler.default}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler.primary}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler.success}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler.info}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler.warning}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler.danger}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler.default}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler.primary}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler.success}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler.info}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler.warning}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler.danger}}
+Content goes here…
+{{/spoiler}}
+
+### New Species
+
+Actually, you can freely insert your modifier class after the `spoiler` phrase.
+
+~~~ .no-highlight
+`{{spoiler.foo}}` … `{{/spoiler}}`
+`{{spoiler.foo-bar-baz}}` … `{{/spoiler}}`
+~~~
+
+~~~ .css
+.spoiler-foo {background-color:#AAA}
+.spoiler-foo-bar-baz {background-color:#BBB}
+~~~
+
+### Custom Classes and ID
+
+Or you can apply the modifier classes and ID that are not bounded by the prefix `.spoiler-` and `#spoiler:` in the `class` and `id` attribute(s).
+
+~~~ .no-highlight
+`{{spoiler class="custom-1" id="custom-1"}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+~~~ .css
+.spoiler.custom-1 {color:#CCC}
+#custom-1 {font-weight:bold}
+~~~
+
+### Custom Attributes
+
+Other attributes will be treated as normal HTML attributes.
+
+~~~ .no-highlight
+`{{spoiler style="color:red;" title="Click to toggle!"}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+### Accordion
+
+Add a `connect` attribute to link the panel with another panels that are also have a `connect` attribute with the same value.
+
+~~~ .no-highlight
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+`{{spoiler.success connect="A"}}` … `{{/spoiler}}`
+
+`{{spoiler.danger connect="B" expand}}` … `{{/spoiler}}`
+`{{spoiler.danger connect="B"}}` … `{{/spoiler}}`
+`{{spoiler.danger connect="B"}}` … `{{/spoiler}}`
+~~~
+
+{{spoiler.success connect="A"}} … {{/spoiler}}
+{{spoiler.success connect="A"}} … {{/spoiler}}
+{{spoiler.success connect="A"}} … {{/spoiler}}
+
+{{spoiler.danger connect="B" expand}} … {{/spoiler}}
+{{spoiler.danger connect="B"}} … {{/spoiler}}
+{{spoiler.danger connect="B"}} … {{/spoiler}}
+
+### Disabled
+
+Do you want to lock the _spoiler_?
+
+~~~ .no-highlight
+`{{spoiler lock}}`
+Content goes here…
+`{{/spoiler}}`
+
+`{{spoiler expand lock}}`
+Content goes here…
+`{{/spoiler}}`
+~~~
+
+{{spoiler lock}}
+Content goes here…
+{{/spoiler}}
+
+{{spoiler expand lock}}
+Content goes here…
+{{/spoiler}}
