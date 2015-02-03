@@ -1,7 +1,7 @@
 Title: Spoiler
 Author: Taufik Nurrohman
 URL: http://latitudu.com
-Version: 1.0.0
+Version: 1.0.1
 
 ====
 
@@ -151,7 +151,7 @@ Konten di sini…
 
 ### Spesies Baru
 
-Sebenarnya Anda bisa dengan bebas menyisipkan kelas pengubah setelah frase `spoiler`.
+Sebenarnya Anda bisa dengan bebas menyisipkan kelas pengubah setelah frase `spoiler.`.
 
 ~~~ .no-highlight
 `{{spoiler.foo}}` … `{{/spoiler}}`

@@ -1,7 +1,7 @@
 Title: Spoiler
 Author: Taufik Nurrohman
 URL: http://latitudu.com
-Version: 1.0.0
+Version: 1.0.1
 
 ====
 
@@ -27,7 +27,7 @@ Content goes here…
 
 ### Default Expanded
 
-Add a `expand` attribute to make the _spoiler_ expanded by default.
+Add a `expand` attribute to make the _spoiler_ becomes expanded by default.
 
 ~~~ .no-highlight
 `{{spoiler expand}}`
@@ -151,7 +151,7 @@ Content goes here…
 
 ### New Species
 
-Actually, you can freely insert your modifier class after the `spoiler` phrase.
+Actually, you are free to insert any modifier class name just after the `spoiler.` phrase.
 
 ~~~ .no-highlight
 `{{spoiler.foo}}` … `{{/spoiler}}`
@@ -165,7 +165,7 @@ Actually, you can freely insert your modifier class after the `spoiler` phrase.
 
 ### Custom Classes and ID
 
-Or you can apply the modifier classes and ID that are not bounded by the prefix `.spoiler-` and `#spoiler:` in the `class` and `id` attribute(s).
+Or you can apply the modifier classes and ID that are not bounded by the prefix `.spoiler-` and `#spoiler:` in the `class` and `id` attributes.
 
 ~~~ .no-highlight
 `{{spoiler class="custom-1" id="custom-1"}}`

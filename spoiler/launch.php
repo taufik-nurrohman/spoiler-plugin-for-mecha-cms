@@ -94,7 +94,7 @@ Route::accept($config->manager->slug . '/plugin/' . basename(__DIR__) . '/update
         unset($request['token']); // Remove token from request array
         $css = File::open(PLUGIN . DS . basename(__DIR__) . DS . 'shell' . DS . 'chromatophores' . DS . $request['skin'] . '.css')->read();
         File::write(trim($css . "\n\n" . trim($request['css'])))->saveTo(PLUGIN . DS . basename(__DIR__) . DS . 'shell' . DS . 'spoiler.css');
-        File::serialize($request)->saveTo(PLUGIN . DS . basename(__DIR__) . DS . 'states' . DS . 'config.txt');
+        File::serialize($request)->saveTo(PLUGIN . DS . basename(__DIR__) . DS . 'states' . DS . 'config.txt', 0600);
         Notify::success(Config::speak('notify_success_updated', array($speak->plugin)));
         Guardian::kick(dirname($config->url_current));
     }
