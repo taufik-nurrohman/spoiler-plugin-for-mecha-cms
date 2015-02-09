@@ -12,7 +12,7 @@ Filter::add('shortcode', function($content) use($spoiler_config) {
     $config = Config::get();
     $counter = 0;
 
-    $content = preg_replace_callback('#(?<!`)\{\{spoiler(\.([a-zA-Z0-9\-]+))?(\}\}| +.*?\}\})(?!`)([\s\S]*?)(?<!`)\{\{\/spoiler(\.\4)?\}\}(?!`)#', function($matches) use($config, $spoiler_config, &$counter) {
+    $content = preg_replace_callback('#(?<!`)\{\{spoiler(\.([a-zA-Z0-9\-]+))?(\}\}| +.*?\}\})(?!`)([\s\S]*?)(?<!`)\{\{\/spoiler(\.\2)?\}\}(?!`)#', function($matches) use($config, $spoiler_config, &$counter) {
 
         $counter++;
 
