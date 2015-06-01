@@ -18,8 +18,8 @@ Filter::add('shortcode', function($content) use($spoiler_config) {
 
         // Fix all shortcode names with descendant definition. The opening and closing tag must be the same.
         // `{{spoiler}} ... {{/spoiler}}` and `{{spoiler.default}} ... {{/spoiler.default}}` are OK
-        // but `{{spoiler.default}} ... {{/spoiler}}` is not. It will never be treated as a valid
-        // shortcode pattern just because the end closing of the shortcode is not `{{/spoiler.default}}`
+        // but not for `{{spoiler.default}} ... {{/spoiler}}`. It will never be treated as a valid shortcode
+        // pattern just because the end closing of the shortcode is not `{{/spoiler.default}}`
         if( ! empty($matches[2])) {
             $matches[0] = preg_replace('#\{\{\/spoiler\}\}$#', '{{/spoiler.' . $matches[2] . '}}', $matches[0]);
         }
@@ -77,25 +77,4 @@ Weapon::add('shell_after', function() use($spoiler_config) {
 
 Weapon::add('SHIPMENT_REGION_BOTTOM', function() {
     echo Asset::javascript('cabinet/plugins/' . basename(__DIR__) . '/sword/spoiler.js');
-});
-
-
-/**
- * Plugin Updater
- * --------------
- */
-
-Route::accept($config->manager->slug . '/plugin/' . basename(__DIR__) . '/update', function() use($config, $speak) {
-    if( ! Guardian::happy()) {
-        Shield::abort();
-    }
-    if($request = Request::post()) {
-        Guardian::checkToken($request['token']);
-        unset($request['token']); // Remove token from request array
-        $css = File::open(PLUGIN . DS . basename(__DIR__) . DS . 'shell' . DS . 'chromatophores' . DS . $request['skin'] . '.css')->read();
-        File::write(trim($css . "\n\n" . trim($request['css'])))->saveTo(PLUGIN . DS . basename(__DIR__) . DS . 'shell' . DS . 'spoiler.css');
-        File::serialize($request)->saveTo(PLUGIN . DS . basename(__DIR__) . DS . 'states' . DS . 'config.txt', 0600);
-        Notify::success(Config::speak('notify_success_updated', array($speak->plugin)));
-        Guardian::kick(dirname($config->url_current));
-    }
 });

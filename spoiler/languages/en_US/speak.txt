@@ -13,7 +13,7 @@ plugin_spoiler_default_toggle_placement:
     bottom: After Panel
 
 plugin_spoiler_default_config:
-  title: Default Configurations
+  title: Default Configuration
   label:
     skin: Theme
     css: Extra <abbr title="Cascading Style Sheet">CSS</abbr>

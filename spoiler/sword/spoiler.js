@@ -20,13 +20,13 @@
         toggleText.push(toggleText[0]);
         toggle.className = 'spoiler-toggle';
         toggle.href = '#' + elem[index].id;
-        toggle.innerHTML = toggleText[/(^| )spoiler-state-collapsed( |$)/.test(elem[index].className) ? 0 : 1];
+        toggle.innerHTML = toggleText[/(^|\s)spoiler-state-collapsed(\s|$)/.test(elem[index].className) ? 0 : 1];
         toggle.onclick = function() {
             var target = this.parentNode,
-                isExpanded = /(^| )spoiler-state-expanded( |$)/.test(target.className),
+                isExpanded = /(^|\s)spoiler-state-expanded(\s|$)/.test(target.className),
                 isConnected = target.getAttribute('data-connection');
-            if (/(^| )spoiler-state-disabled( |$)/.test(target.className)) return false;
-            target.className = isExpanded ? target.className.replace(/(^| )spoiler-state-expanded( |$)/, '$1spoiler-state-collapsed$2') : target.className.replace(/(^| )spoiler-state-collapsed( |$)/, '$1spoiler-state-expanded$2');
+            if (/(^|\s)spoiler-state-disabled(\s|$)/.test(target.className)) return false;
+            target.className = isExpanded ? target.className.replace(/(^|\s)spoiler-state-expanded(\s|$)/, '$1spoiler-state-collapsed$2') : target.className.replace(/(^|\s)spoiler-state-collapsed(\s|$)/, '$1spoiler-state-expanded$2');
             this.innerHTML = toggleText[isExpanded ? 0 : 1];
             if (isConnected) {
                 for (var i = 0, len = elem.length; i < len; ++i) {
@@ -34,7 +34,7 @@
                         toggleTextSibling = (elem[i].getAttribute('data-toggle-text') || '&nbsp;').split(' | '),
                         togglePlacementSibling = elem[i].getAttribute('data-toggle-placement') && elem[i].getAttribute('data-toggle-placement') !== 'bottom' ? elem[i].getAttribute('data-toggle-placement') : 'bottom';
                     if (isConnectedTo && isConnected === isConnectedTo && target.id !== elem[i].id) {
-                        elem[i].className = elem[i].className.replace(/(^| )spoiler-state-expanded( |$)/, '$1spoiler-state-collapsed$2');
+                        elem[i].className = elem[i].className.replace(/(^|\s)spoiler-state-expanded(\s|$)/, '$1spoiler-state-collapsed$2');
                         elem[i].children[togglePlacementSibling === 'bottom' ? 1 : 0].innerHTML = toggleTextSibling[0];
                     }
                 }
@@ -52,7 +52,7 @@
     }
 
     // Backend
-    if (typeof DASHBOARD != "undefined") {
+    if (typeof DASHBOARD !== "undefined") {
         DASHBOARD.add('on_preview_complete', doApplySpoiler);
     }
 
