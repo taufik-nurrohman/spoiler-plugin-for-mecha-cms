@@ -1,5 +1,5 @@
 <form class="form-plugin" action="<?php echo $config->url_current; ?>/update" method="post">
-  <?php $spoiler_config = File::open(PLUGIN . DS . File::B(__DIR__) . DS . 'states' . DS . 'config.txt')->unserialize(); ?>
+  <?php $spoiler_config = File::open(__DIR__ . DS . 'states' . DS . 'config.txt')->unserialize(); ?>
   <?php echo Form::hidden('token', $token); ?>
   <fieldset>
     <legend><?php echo $speak->plugin_spoiler_default_toggle_text->title; ?></legend>
@@ -37,11 +37,11 @@
       <span class="grid span-5">
       <?php
 
-      $skin = glob(PLUGIN . DS . File::B(__DIR__) . DS . 'assets' . DS . 'shell' . DS . 'pigment' . DS . '*.css', GLOB_NOSORT);
+      $skin = glob(__DIR__ . DS . 'assets' . DS . 'shell' . DS . 'pigment' . DS . '*.css', GLOB_NOSORT);
       $skin_options = array();
       foreach($skin as $s) {
           $s = File::N($s);
-          $skin_options[$s] = ucwords(Text::parse($s, '->text'));
+          $skin_options[$s] = Text::parse($s, '->title');
       }
 
       asort($skin_options);

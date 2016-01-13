@@ -1,12 +1,13 @@
 <?php
 
-$spoiler_config = File::open(PLUGIN . DS . File::B(__DIR__) . DS . 'states' . DS . 'config.txt')->unserialize();
+$spoiler_config = File::open(__DIR__ . DS . 'states' . DS . 'config.txt')->unserialize();
 
 Config::set('spoiler_id', 1);
 
-Filter::add('shortcode', function($content) use($spoiler_config) {
+function do_shortcode_spoiler($content) {
     // No shortcode pattern found
     if( ! Text::check($content)->has('{{spoiler')) return $content;
+    global $spoiler_config;
     $config = Config::get();
     $counter = 0;
     $content = preg_replace_callback('#(?<!`)\{\{spoiler(\.([a-zA-Z0-9\-]+))?(\}\}| +.*?\}\})(?!`)([\s\S]*?)(?<!`)\{\{\/spoiler(\.\2)?\}\}(?!`)#', function($matches) use($config, $spoiler_config, &$counter) {
@@ -41,7 +42,9 @@ Filter::add('shortcode', function($content) use($spoiler_config) {
     }, $content);
     Config::set('spoiler_id', $config->spoiler_id + 1);
     return $content;
-});
+}
+
+Filter::add('shortcode', 'do_shortcode_spoiler');
 
 Filter::add('content', function($content) {
     // Remove the `markdown` attribute if it's still there
@@ -53,9 +56,9 @@ Weapon::add('SHIPMENT_REGION_TOP', function() {
 });
 
 Weapon::add('shell_after', function() use($spoiler_config) {
-    echo Asset::stylesheet('cabinet/plugins/' . File::B(__DIR__) . '/assets/shell/spoiler.css');
+    echo Asset::stylesheet(__DIR__ . DS . 'assets' . DS . 'shell' . DS . 'spoiler.css');
 });
 
 Weapon::add('SHIPMENT_REGION_BOTTOM', function() {
-    echo Asset::javascript('cabinet/plugins/' . File::B(__DIR__) . '/assets/sword/spoiler.js');
+    echo Asset::javascript(__DIR__ . DS . 'assets' . DS . 'sword' . DS . 'spoiler.js');
 });

@@ -8,6 +8,4 @@ Unfortunately, I was unable to find the exact definition of the term &ldquo;spoi
 Screenshot
 ----------
 
-![Plugin Screenshot](https://cloud.githubusercontent.com/assets/1669261/5995768/08b221ba-aace-11e4-8413-1dc7f020d224.png)
-
-Upload the `spoiler` folder along with its contents through the plugin uploader. You need to compress the folder into a ZIP file to simplify the uploading process. After that, go to the plugin manager page and follow the instructions on the **About** tab.
+![Image](https://cloud.githubusercontent.com/assets/1669261/5995768/08b221ba-aace-11e4-8413-1dc7f020d224.png)
